@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CHRONO ELITE — Luxury Watches | Free COD Delivery</title>
+<meta name="description" content="Premium luxury watches with free Cash on Delivery. Authentic Swiss timepieces. Buy Now with free insured shipping.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500;1,700&family=DM+Sans:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+<style>
+/*──────────────────────────────────────
+  ROOT / RESET
+──────────────────────────────────────*/
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --gold:#B8922A;
+  --gold2:#D4AF5A;
+  --gold-pale:#F5E9C8;
+  --black:#080808;
+  --dark:#111;
+  --char:#1A1A1A;
+  --surface:#222;
+  --border:rgba(184,146,42,.18);
+  --text:#F0EAD6;
+  --muted:#9A8F78;
+  --dim:#5A5040;
+  --white:#FAFAF8;
+  --red:#C0392B;
+  --green:#27AE60;
+  --radius:4px;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--dark);color:var(--text);font-family:'DM Sans',sans-serif;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+button{font-family:'DM Sans',sans-serif;cursor:pointer}
+::-webkit-scrollbar{width:3px}::-webkit-scrollbar-thumb{background:var(--gold)}
+
+/*──────────────────────────────────────
+  UTILITY
+──────────────────────────────────────*/
+.container{max-width:1200px;margin:0 auto;padding:0 2rem}
+.gold{color:var(--gold2)}
+.serif{font-family:'Playfair Display',serif}
+.italic{font-style:italic}
+.tag{font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold2);font-weight:600}
+.section-pad{padding:5rem 0}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
+.reveal.in{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+
+/*──────────────────────────────────────
+  ANNOUNCEMENT BAR
+──────────────────────────────────────*/
+#ann-bar{background:var(--gold);padding:.5rem 1rem;text-align:center;font-size:.72rem;font-weight:600;color:var(--black);letter-spacing:.08em;position:relative;z-index:300}
+#ann-bar span{font-weight:800}
+
+/*──────────────────────────────────────
+  NAV
+──────────────────────────────────────*/
+#nav{position:sticky;top:0;z-index:250;background:rgba(8,8,8,.97);border-bottom:1px solid var(--border);backdrop-filter:blur(12px);transition:all .3s}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:.9rem 2rem;max-width:1300px;margin:0 auto;gap:1rem}
+.logo{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;letter-spacing:.16em;color:var(--gold2);white-space:nowrap}
+.logo sub{font-size:.55rem;letter-spacing:.1em;color:var(--muted);font-family:'DM Sans',sans-serif;font-weight:400;vertical-align:super;margin-left:.3rem}
+.nav-links{display:flex;gap:1.8rem;list-style:none}
+.nav-links a{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:500;transition:color .25s}
+.nav-links a:hover{color:var(--gold2)}
+.nav-actions{display:flex;align-items:center;gap:.8rem}
+.nav-icon-btn{background:none;border:none;color:var(--muted);font-size:1rem;padding:.3rem;transition:color .25s}
+.nav-icon-btn:hover{color:var(--gold2)}
+.cart-pill{background:var(--gold);color:var(--black);border:none;padding:.5rem 1.2rem;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border-radius:2px;display:flex;align-items:center;gap:.5rem;transition:background .25s;white-space:nowrap}
+.cart-pill:hover{background:var(--gold2)}
+.cart-count{background:var(--black);color:var(--gold2);width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:800}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:.3rem}
+.hamburger span{width:22px;height:1.5px;background:var(--muted);display:block;transition:all .3s}
+@media(max-width:768px){
+  .nav-links{display:none}.nav-links.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--black);border-bottom:1px solid var(--border);padding:1.5rem 2rem;gap:1.2rem;z-index:260}
+  .hamburger{display:flex}
+  .logo{font-size:1.1rem}
+}
+
+/*──────────────────────────────────────
+  POPUP / EXIT INTENT
+──────────────────────────────────────*/
+#popup-overlay{position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:1000;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .4s}
+#popup-overlay.show{opacity:1;pointer-events:all}
+.popup-box{background:var(--char);border:1px solid var(--gold);max-width:440px;width:90%;padding:2.5rem 2rem;position:relative;text-align:center}
+.popup-close{position:absolute;top:.8rem;right:1rem;background:none;border:none;color:var(--muted);font-size:1.3rem;cursor:pointer}
+.popup-box h2{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--gold2);margin:.5rem 0}
+.popup-box p{color:var(--muted);font-size:.85rem;margin:.6rem 0 1.4rem;line-height:1.6}
+.popup-input{width:100%;background:var(--surface);border:1px solid var(--border);color:var(--text);padding:.75rem 1rem;font-family:'DM Sans',sans-serif;font-size:.85rem;outline:none;margin-bottom:.7rem}
+.popup-input::placeholder{color:var(--dim)}
+.popup-btn{width:100%;background:var(--gold);color:var(--black);border:none;padding:.85rem;font-weight:700;font-size:.82rem;letter-spacing:.15em;text-transform:uppercase}
+.popup-skip{display:block;margin-top:.9rem;font-size:.72rem;color:var(--dim);cursor:pointer;transition:color .25s}
+.popup-skip:hover{color:var(--muted)}
+.discount-badge{background:var(--red);color:white;font-size:.7rem;font-weight:800;padding:.3rem .9rem;letter-spacing:.1em;display:inline-block;margin-bottom:.8rem}
+
+/*──────────────────────────────────────
+  HERO
+──────────────────────────────────────*/
+#hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;background:radial-gradient(ellipse at 65% 45%,#1c1200 0%,#080808 65%)}
+.hero-grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(184,146,42,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(184,146,42,.025) 1px,transparent 1px);background-size:56px 56px}
+.hero-content{position:relative;z-index:3;max-width:540px}
+.hero-eyebrow{font-size:.62rem;letter-spacing:.45em;text-transform:uppercase;color:var(--gold2);margin-bottom:1.2rem;display:flex;align-items:center;gap:.8rem}
+.hero-eyebrow::before{content:'';width:32px;height:1px;background:var(--gold2)}
+.hero-h1{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,5vw,5.2rem);line-height:1.04;font-weight:700;margin-bottom:1rem}
+.hero-h1 em{font-style:italic;color:var(--gold2)}
+.hero-sub{font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,1.5vw,1.2rem);color:var(--muted);margin-bottom:.9rem;font-style:italic;line-height:1.7}
+.hero-benefits{list-style:none;margin-bottom:2rem}
+.hero-benefits li{font-size:.8rem;color:var(--muted);padding:.25rem 0;display:flex;align-items:center;gap:.6rem}
+.hero-benefits li::before{content:'✓';color:var(--gold2);font-weight:700;font-size:.85rem}
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:1.5rem}
+.btn-buy{background:var(--gold);color:var(--black);border:none;padding:1rem 2.2rem;font-size:.8rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;border-radius:2px;transition:all .25s;position:relative;overflow:hidden}
+.btn-buy::after{content:'';position:absolute;inset:0;background:rgba(255,255,255,.12);transform:translateX(-100%);transition:transform .4s}
+.btn-buy:hover::after{transform:translateX(0)}
+.btn-buy:hover{background:var(--gold2);transform:translateY(-1px)}
+.btn-secondary{background:transparent;color:var(--muted);border:1px solid var(--border);padding:1rem 2.2rem;font-size:.78rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;border-radius:2px;transition:all .25s}
+.btn-secondary:hover{color:var(--gold2);border-color:var(--gold2)}
+.hero-trust{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:.4rem;font-size:.7rem;color:var(--dim)}
+.trust-item span{font-size:1rem}
+.hero-visual{position:absolute;right:0;top:0;width:52%;height:100%;display:flex;align-items:center;justify-content:center;z-index:2}
+.hero-watch-wrap{animation:floatWatch 7s ease-in-out infinite}
+@keyframes floatWatch{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-18px) rotate(-2deg)}}
+.hero-badge{position:absolute;top:2rem;right:2rem;background:var(--gold);color:var(--black);padding:1rem;text-align:center;border-radius:50%;width:90px;height:90px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:800;z-index:4;box-shadow:0 0 30px rgba(184,146,42,.4)}
+.hero-badge .pct{font-size:1.4rem;line-height:1;font-family:'Playfair Display',serif}
+.hero-badge .off{font-size:.52rem;letter-spacing:.12em;text-transform:uppercase}
+@media(max-width:900px){.hero-visual{position:relative;width:100%;height:340px;order:-1}.hero-content{max-width:100%;text-align:center}.hero-eyebrow{justify-content:center}.hero-benefits li{justify-content:center}.hero-ctas{justify-content:center}.hero-trust{justify-content:center}#hero{flex-direction:column;padding-top:2rem}.hero-badge{top:1rem;right:1rem}}
+
+/*──────────────────────────────────────
+  TICKER
+──────────────────────────────────────*/
+.ticker-bar{background:var(--gold);overflow:hidden;padding:.55rem 0}
+.ticker-track{display:flex;animation:tickAnim 30s linear infinite;white-space:nowrap}
+@keyframes tickAnim{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.t-item{font-size:.62rem;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--black);padding:0 2.5rem}
+.t-dot{opacity:.35;margin:0 .3rem}
+
+/*──────────────────────────────────────
+  TRUST BAR
+──────────────────────────────────────*/
+.trust-bar{background:var(--char);border-bottom:1px solid var(--border)}
+.trust-bar-inner{display:flex;justify-content:space-around;flex-wrap:wrap;gap:.5rem;padding:1.4rem 2rem;max-width:1200px;margin:0 auto}
+.trust-item-bar{display:flex;align-items:center;gap:.7rem;padding:.5rem}
+.ti-icon{font-size:1.4rem;color:var(--gold2)}
+.ti-label{font-size:.72rem;font-weight:600;color:var(--text)}
+.ti-sub{font-size:.62rem;color:var(--muted)}
+
+/*──────────────────────────────────────
+  SOCIAL PROOF MINI
+──────────────────────────────────────*/
+.proof-strip{background:var(--black);padding:1.2rem 0;border-bottom:1px solid var(--border)}
+.proof-strip-inner{display:flex;align-items:center;justify-content:center;gap:2.5rem;flex-wrap:wrap;max-width:1200px;margin:0 auto;padding:0 2rem}
+.proof-num{text-align:center}
+.proof-num strong{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--gold2);display:block}
+.proof-num span{font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--dim)}
+.proof-sep{width:1px;height:40px;background:var(--border)}
+
+/*──────────────────────────────────────
+  PRODUCT SECTION
+──────────────────────────────────────*/
+#product{background:var(--dark)}
+.prod-wrap{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;max-width:1200px;margin:0 auto;padding:5rem 2rem}
+@media(max-width:768px){.prod-wrap{grid-template-columns:1fr;gap:2rem;padding:3rem 1.5rem}}
+
+/* Media gallery */
+.media-gallery{}
+.main-img{background:var(--char);aspect-ratio:1;display:flex;align-items:center;justify-content:center;border:1px solid var(--border);position:relative;overflow:hidden;margin-bottom:.8rem}
+.main-img-badge{position:absolute;top:1rem;left:1rem;background:var(--red);color:white;font-size:.6rem;font-weight:800;padding:.3rem .7rem;letter-spacing:.1em}
+.thumb-row{display:flex;gap:.6rem}
+.thumb{background:var(--char);border:1px solid var(--border);aspect-ratio:1;flex:1;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:border-color .25s;overflow:hidden}
+.thumb:hover,.thumb.active{border-color:var(--gold2)}
+.thumb svg{width:60%;height:60%}
+
+/* Product info */
+.prod-brand-tag{font-size:.6rem;letter-spacing:.35em;text-transform:uppercase;color:var(--gold2);margin-bottom:.5rem;font-weight:600}
+.prod-name{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;line-height:1.15;margin-bottom:.5rem}
+.prod-stars-row{display:flex;align-items:center;gap:.6rem;margin-bottom:1rem}
+.stars-gold{color:var(--gold2);font-size:.9rem;letter-spacing:2px}
+.review-count{font-size:.75rem;color:var(--muted);border-bottom:1px solid var(--border);padding-bottom:.1rem}
+.price-row{display:flex;align-items:center;gap:.9rem;margin-bottom:.3rem}
+.price-now{font-family:'Playfair Display',serif;font-size:2rem;color:var(--gold2);font-weight:700}
+.price-old{font-size:1rem;color:var(--dim);text-decoration:line-through}
+.price-save{background:var(--red);color:white;font-size:.65rem;font-weight:800;padding:.2rem .6rem;letter-spacing:.1em}
+.stock-row{display:flex;align-items:center;gap:.6rem;margin-bottom:1.2rem;font-size:.75rem}
+.stock-dot{width:7px;height:7px;border-radius:50%;background:var(--green);flex-shrink:0}
+.stock-label{color:var(--green);font-weight:600}
+.stock-count{color:var(--dim)}
+.countdown-wrap{background:var(--char);border:1px solid var(--border);padding:.8rem 1rem;margin-bottom:1.2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.cd-label{font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.cd-timer{display:flex;gap:.5rem;align-items:center}
+.cd-unit{background:var(--surface);padding:.3rem .5rem;text-align:center;min-width:42px}
+.cd-num{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--gold2);display:block;line-height:1;font-weight:700}
+.cd-lab{font-size:.5rem;letter-spacing:.15em;text-transform:uppercase;color:var(--dim);display:block}
+.cd-sep{color:var(--gold);font-size:1rem;font-weight:700}
+.variant-label{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;font-weight:600}
+.variant-options{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.1rem}
+.v-opt{background:none;border:1px solid var(--border);color:var(--muted);padding:.4rem .9rem;font-size:.72rem;letter-spacing:.08em;transition:all .25s}
+.v-opt:hover,.v-opt.sel{border-color:var(--gold2);color:var(--gold2);background:rgba(184,146,42,.08)}
+.qty-row{display:flex;align-items:center;gap:1rem;margin-bottom:1.2rem}
+.qty-ctrl{display:flex;align-items:center;border:1px solid var(--border)}
+.qty-btn{background:none;border:none;color:var(--muted);width:36px;height:36px;font-size:1.1rem;transition:color .25s}
+.qty-btn:hover{color:var(--gold2)}
+.qty-val{width:40px;text-align:center;font-size:.9rem;background:none;border:none;color:var(--text);font-family:'DM Sans',sans-serif}
+.action-stack{display:flex;flex-direction:column;gap:.7rem;margin-bottom:1.2rem}
+.btn-add-cart{background:var(--char);color:var(--gold2);border:2px solid var(--gold);padding:1rem;font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;border-radius:2px;transition:all .25s}
+.btn-add-cart:hover{background:rgba(184,146,42,.1)}
+.btn-buy-now{background:var(--gold);color:var(--black);border:none;padding:1.1rem;font-size:.82rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;border-radius:2px;transition:all .25s;position:relative;overflow:hidden}
+.btn-buy-now:hover{background:var(--gold2);transform:translateY(-1px)}
+.btn-whatsapp{background:#25D366;color:white;border:none;padding:1rem;font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;border-radius:2px;display:flex;align-items:center;justify-content:center;gap:.5rem;transition:opacity .25s}
+.btn-whatsapp:hover{opacity:.88}
+.payment-badges{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1rem}
+.pay-badge{background:var(--surface);border:1px solid var(--border);padding:.25rem .6rem;font-size:.6rem;color:var(--muted);letter-spacing:.08em;display:flex;align-items:center;gap:.3rem}
+.cod-badge{background:var(--char);border:1px solid var(--gold);padding:.4rem .8rem;font-size:.65rem;color:var(--gold2);font-weight:700;letter-spacing:.12em;display:inline-flex;align-items:center;gap:.4rem}
+.prod-highlights{border-top:1px solid var(--border);padding-top:1rem;margin-top:.5rem}
+.highlight-item{display:flex;align-items:flex-start;gap:.8rem;padding:.55rem 0;border-bottom:1px solid rgba(184,146,42,.07)}
+.hi-icon{color:var(--gold2);font-size:.9rem;flex-shrink:0;margin-top:.1rem}
+.hi-text strong{display:block;font-size:.78rem;color:var(--text)}
+.hi-text span{font-size:.72rem;color:var(--muted)}
+
+/*──────────────────────────────────────
+  STORY SECTION
+──────────────────────────────────────*/
+#story{background:var(--char);border-top:1px solid var(--border)}
+.story-wrap{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+@media(max-width:768px){.story-wrap{grid-template-columns:1fr;gap:2.5rem}}
+.story-visual{position:relative;display:flex;justify-content:center}
+.story-card{background:var(--dark);border:1px solid var(--border);padding:2rem;position:relative}
+.story-quote{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-style:italic;color:var(--text);line-height:1.7;margin-bottom:1rem}
+.story-sig{font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold2)}
+.story-deco{position:absolute;top:-1px;left:2rem;background:var(--gold);width:60px;height:3px}
+.problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.5rem}
+.prob-item{background:var(--dark);border:1px solid var(--border);padding:1rem;transition:border-color .25s}
+.prob-item:hover{border-color:var(--gold)}
+.prob-icon{font-size:1.2rem;color:var(--gold2);margin-bottom:.4rem}
+.prob-title{font-size:.8rem;font-weight:600;margin-bottom:.2rem}
+.prob-text{font-size:.72rem;color:var(--muted);line-height:1.55}
+
+/*──────────────────────────────────────
+  BUNDLES
+──────────────────────────────────────*/
+#bundles{background:var(--dark)}
+.bundle-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2rem}
+@media(max-width:768px){.bundle-grid{grid-template-columns:1fr}}
+.bundle-card{background:var(--char);border:1px solid var(--border);padding:1.5rem;position:relative;transition:border-color .3s}
+.bundle-card.best{border-color:var(--gold)}
+.bundle-card:hover{border-color:var(--gold2)}
+.bundle-best-tag{position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--black);font-size:.58rem;font-weight:800;letter-spacing:.14em;padding:.22rem .7rem;white-space:nowrap}
+.bundle-name{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;margin-bottom:.3rem;color:var(--gold2)}
+.bundle-desc{font-size:.75rem;color:var(--muted);margin-bottom:1rem;line-height:1.55}
+.bundle-items{list-style:none;margin-bottom:1rem}
+.bundle-items li{font-size:.72rem;color:var(--text);padding:.25rem 0;display:flex;gap:.5rem;align-items:center}
+.bundle-items li::before{content:'◆';font-size:.4rem;color:var(--gold2);flex-shrink:0}
+.bundle-price{margin-bottom:1rem}
+.b-now{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--gold2);font-weight:700}
+.b-old{font-size:.82rem;color:var(--dim);text-decoration:line-through;margin-left:.4rem}
+.b-save{font-size:.65rem;color:var(--red);font-weight:600;margin-left:.4rem}
+.bundle-btn{width:100%;background:var(--char);border:1px solid var(--gold);color:var(--gold2);padding:.75rem;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;transition:all .25s}
+.bundle-card.best .bundle-btn{background:var(--gold);color:var(--black)}
+.bundle-btn:hover{background:var(--gold);color:var(--black)}
+
+/*──────────────────────────────────────
+  REVIEWS
+──────────────────────────────────────*/
+#reviews{background:var(--char)}
+.reviews-summary{display:flex;align-items:center;gap:3rem;margin-bottom:3rem;flex-wrap:wrap}
+.rating-big{text-align:center}
+.rating-num{font-family:'Playfair Display',serif;font-size:4rem;color:var(--gold2);line-height:1;font-weight:700}
+.rating-stars{color:var(--gold2);font-size:1.1rem;letter-spacing:3px;margin:.2rem 0}
+.rating-count{font-size:.7rem;color:var(--muted)}
+.rating-bars{flex:1;min-width:200px}
+.rb-row{display:flex;align-items:center;gap:.7rem;margin-bottom:.4rem}
+.rb-label{font-size:.7rem;color:var(--muted);white-space:nowrap;width:40px;text-align:right}
+.rb-bar{flex:1;height:5px;background:var(--surface);border-radius:2px;overflow:hidden}
+.rb-fill{height:100%;background:var(--gold2);border-radius:2px}
+.rb-count{font-size:.65rem;color:var(--dim);width:24px}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+@media(max-width:900px){.reviews-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.reviews-grid{grid-template-columns:1fr}}
+.review-card{background:var(--dark);border:1px solid var(--border);padding:1.4rem;position:relative}
+.rc-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.6rem}
+.rc-stars{color:var(--gold2);font-size:.75rem;letter-spacing:2px}
+.rc-verified{font-size:.58rem;color:var(--green);border:1px solid rgba(39,174,96,.3);padding:.1rem .4rem;letter-spacing:.1em}
+.rc-title{font-size:.85rem;font-weight:600;margin-bottom:.4rem}
+.rc-text{font-size:.78rem;color:var(--muted);line-height:1.6;margin-bottom:.8rem}
+.rc-author{display:flex;align-items:center;gap:.6rem}
+.rc-avatar{width:28px;height:28px;border-radius:50%;background:var(--surface);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:var(--gold2);font-weight:600}
+.rc-name{font-size:.72rem;font-weight:600}
+.rc-loc{font-size:.62rem;color:var(--dim)}
+.rc-img{width:48px;height:48px;background:var(--surface);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1.2rem}
+
+/*──────────────────────────────────────
+  CHECKOUT / COD SECTION
+──────────────────────────────────────*/
+#cod{background:linear-gradient(135deg,#0c0800,#161000,#0c0800);border-top:1px solid var(--border)}
+.cod-wrap{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+@media(max-width:768px){.cod-wrap{grid-template-columns:1fr;gap:2rem}}
+.cod-form-wrap{background:var(--char);border:1px solid var(--border);padding:2rem}
+.form-title{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--gold2);margin-bottom:.3rem}
+.form-sub{font-size:.75rem;color:var(--muted);margin-bottom:1.4rem}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-bottom:.8rem}
+@media(max-width:500px){.field-row{grid-template-columns:1fr}}
+.field{display:flex;flex-direction:column;margin-bottom:.8rem}
+.field label{font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.35rem;font-weight:600}
+.field input,.field select,.field textarea{background:var(--surface);border:1px solid var(--border);color:var(--text);padding:.72rem .9rem;font-family:'DM Sans',sans-serif;font-size:.82rem;outline:none;transition:border-color .25s;-webkit-appearance:none}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--gold)}
+.field input::placeholder,.field textarea::placeholder{color:var(--dim)}
+.field select{cursor:pointer}
+.field select option{background:var(--char)}
+.payment-method{margin-bottom:1.2rem}
+.pm-label{font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;font-weight:600}
+.pm-options{display:flex;gap:.6rem;flex-wrap:wrap}
+.pm-opt{display:flex;align-items:center;gap:.4rem;cursor:pointer}
+.pm-opt input[type=radio]{accent-color:var(--gold)}
+.pm-opt span{font-size:.78rem;color:var(--text)}
+.order-total-box{background:var(--surface);border:1px solid var(--border);padding:1rem;margin-bottom:1.2rem}
+.ot-row{display:flex;justify-content:space-between;font-size:.78rem;padding:.3rem 0;border-bottom:1px solid rgba(184,146,42,.07)}
+.ot-row:last-child{border:none;color:var(--gold2);font-weight:700;font-size:.9rem;padding-top:.5rem}
+.submit-btn{width:100%;background:var(--gold);color:var(--black);border:none;padding:1.1rem;font-size:.85rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;border-radius:2px;transition:all .25s}
+.submit-btn:hover{background:var(--gold2);transform:translateY(-1px)}
+.form-note{font-size:.65rem;color:var(--dim);text-align:center;margin-top:.7rem;line-height:1.5}
+.cod-info h3{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--gold2);margin-bottom:.5rem}
+.cod-info p{font-size:.82rem;color:var(--muted);line-height:1.7;margin-bottom:1.5rem}
+.cod-steps{list-style:none;margin-bottom:1.5rem}
+.cod-step{display:flex;align-items:flex-start;gap:.9rem;padding:.7rem 0;border-bottom:1px solid rgba(184,146,42,.07)}
+.step-num{width:28px;height:28px;background:var(--gold);color:var(--black);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:800;flex-shrink:0;margin-top:.05rem}
+.step-text strong{display:block;font-size:.8rem;color:var(--text);margin-bottom:.15rem}
+.step-text span{font-size:.72rem;color:var(--muted)}
+
+/*──────────────────────────────────────
+  FAQ
+──────────────────────────────────────*/
+#faq{background:var(--dark)}
+.faq-list{max-width:700px;margin:2rem auto 0}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-q{width:100%;background:none;border:none;color:var(--text);text-align:left;padding:1.1rem 0;font-size:.88rem;font-weight:500;display:flex;justify-content:space-between;align-items:center;gap:1rem;font-family:'DM Sans',sans-serif;cursor:pointer;transition:color .25s}
+.faq-q:hover{color:var(--gold2)}
+.faq-icon{color:var(--gold2);font-size:.9rem;flex-shrink:0;transition:transform .3s}
+.faq-item.open .faq-icon{transform:rotate(45deg)}
+.faq-a{font-size:.8rem;color:var(--muted);line-height:1.7;max-height:0;overflow:hidden;transition:max-height .35s,padding .35s}
+.faq-item.open .faq-a{max-height:200px;padding-bottom:1.1rem}
+
+/*──────────────────────────────────────
+  WHATSAPP FLOAT
+──────────────────────────────────────*/
+#wa-float{position:fixed;bottom:1.8rem;right:1.8rem;z-index:300;display:flex;flex-direction:column;align-items:flex-end;gap:.5rem}
+.wa-btn{width:54px;height:54px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);text-decoration:none;transition:transform .25s}
+.wa-btn:hover{transform:scale(1.08)}
+.wa-btn svg{width:26px;height:26px;fill:white}
+.wa-tooltip{background:var(--char);border:1px solid var(--border);color:var(--text);font-size:.72rem;padding:.45rem .9rem;white-space:nowrap;border-radius:2px;animation:fadeIn .3s}
+@keyframes fadeIn{from{opacity:0;transform:translateX(8px)}to{opacity:1;transform:translateX(0)}}
+
+/*──────────────────────────────────────
+  STICKY BUY BTN (MOBILE)
+──────────────────────────────────────*/
+#sticky-buy{position:fixed;bottom:0;left:0;right:0;z-index:200;background:var(--black);border-top:1px solid var(--border);padding:.8rem 1.5rem;display:none;align-items:center;justify-content:space-between;gap:1rem}
+.sticky-price{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--gold2)}
+.sticky-btn{background:var(--gold);color:var(--black);border:none;padding:.7rem 1.8rem;font-size:.78rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;flex:1;max-width:220px;transition:background .25s}
+.sticky-btn:hover{background:var(--gold2)}
+@media(max-width:768px){#sticky-buy{display:flex}}
+
+/*──────────────────────────────────────
+  FOOTER
+──────────────────────────────────────*/
+footer{background:#040404;border-top:1px solid var(--border);padding:3.5rem 2rem 1.5rem}
+.foot-inner{max-width:1200px;margin:0 auto}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem;margin-bottom:2.5rem}
+@media(max-width:900px){.foot-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:500px){.foot-grid{grid-template-columns:1fr}}
+.foot-logo{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;letter-spacing:.16em;color:var(--gold2);margin-bottom:.8rem;display:block}
+.foot-desc{font-size:.76rem;line-height:1.8;color:var(--dim);max-width:250px;margin-bottom:1rem}
+.foot-contact a{display:flex;align-items:center;gap:.5rem;font-size:.76rem;color:var(--muted);margin-bottom:.4rem;transition:color .25s}
+.foot-contact a:hover{color:var(--gold2)}
+.foot-col h4{font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold2);margin-bottom:1rem;font-weight:600}
+.foot-col ul{list-style:none}
+.foot-col li{margin-bottom:.5rem}
+.foot-col a{font-size:.76rem;color:var(--dim);transition:color .25s}
+.foot-col a:hover{color:var(--gold2)}
+.foot-bottom{border-top:1px solid var(--border);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.foot-copy{font-size:.65rem;color:var(--dim)}
+.foot-pays{display:flex;gap:.5rem}
+.fp{background:var(--surface);border:1px solid var(--border);padding:.22rem .5rem;font-size:.58rem;color:var(--dim)}
+.social-row{display:flex;gap:.6rem}
+.soc{width:28px;height:28px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.65rem;color:var(--dim);transition:all .25s}
+.soc:hover{border-color:var(--gold2);color:var(--gold2)}
+
+/*──────────────────────────────────────
+  TOAST
+──────────────────────────────────────*/
+#toast{position:fixed;top:5rem;right:1.5rem;z-index:500;background:var(--char);border:1px solid var(--gold);padding:.9rem 1.3rem;max-width:260px;transform:translateX(300px);opacity:0;transition:all .4s}
+#toast.show{transform:translateX(0);opacity:1}
+.toast-t{color:var(--gold2);font-weight:700;font-size:.8rem;margin-bottom:.15rem}
+.toast-b{font-size:.73rem;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<!-- ═══ ANNOUNCEMENT BAR ═══ -->
+<div id="ann-bar">
+  🚚 FREE Shipping + Cash on Delivery Available &nbsp;|&nbsp; <span>🔥 Flash Sale: 20% OFF Today Only</span> &nbsp;|&nbsp; ⭐ 4.9/5 from 2,400+ Reviews
+</div>
+
+<!-- ═══ NAV ═══ -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#" class="logo">CHRONO<span class="serif"> ELITE</span><sub>®</sub></a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#product">Shop</a></li>
+      <li><a href="#bundles">Bundles</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#cod">Order Now</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="nav-icon-btn" title="Search">🔍</button>
+      <button class="nav-icon-btn" title="Wishlist">♡</button>
+      <button class="cart-pill" id="cart-btn" onclick="scrollToCOD()">
+        🛒 Cart <div class="cart-count" id="cart-count">0</div>
+      </button>
+      <button class="hamburger" id="ham" onclick="toggleNav()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══ EXIT / DISCOUNT POPUP ═══ -->
+<div id="popup-overlay">
+  <div class="popup-box">
+    <button class="popup-close" onclick="closePopup()">✕</button>
+    <div class="discount-badge">EXCLUSIVE OFFER</div>
+    <h2>Wait! Get 15% OFF</h2>
+    <p>Sign up and we'll send you a private discount code — valid on your first order. Don't miss out on this one.</p>
+    <input class="popup-input" type="email" placeholder="Enter your email address" id="popup-email"/>
+    <button class="popup-btn" onclick="claimDiscount()">Claim My 15% Discount →</button>
+    <span class="popup-skip" onclick="closePopup()">No thanks, I'll pay full price</span>
+  </div>
+</div>
+
+<!-- ═══ HERO ═══ -->
+<section id="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="container" style="display:flex;align-items:center;width:100%;padding:5rem 2rem;position:relative;z-index:3;min-height:90vh">
+    <div class="hero-content">
+      <div class="hero-eyebrow reveal">Swiss Luxury Collection 2025</div>
+      <h1 class="hero-h1 reveal d1">
+        The Watch That<br><em>Defines You</em>
+      </h1>
+      <p class="hero-sub reveal d2">"Because the right timepiece doesn't just tell time — it tells your story."</p>
+      <ul class="hero-benefits reveal d2">
+        <li>Swiss-certified mechanical movement</li>
+        <li>Sapphire crystal · 100m water resistant</li>
+        <li>Free insured worldwide shipping</li>
+        <li>Cash on Delivery available</li>
+      </ul>
+      <div class="hero-ctas reveal d3">
+        <button class="btn-buy" onclick="scrollToCOD()">🛒 Buy Now — COD Available</button>
+        <a href="#product" class="btn-secondary">View Details</a>
+      </div>
+      <div class="hero-trust reveal d4">
+        <div class="trust-item"><span>⭐</span> 4.9/5 Rating</div>
+        <div class="trust-item"><span>🔒</span> Secure Checkout</div>
+        <div class="trust-item"><span>🚚</span> Free Shipping</div>
+        <div class="trust-item"><span>💵</span> COD Available</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-badge reveal d3">
+      <div class="pct">20%</div>
+      <div class="off">OFF Today</div>
+    </div>
+    <div class="hero-watch-wrap">
+      <svg viewBox="0 0 320 490" width="min(320px,80vw)" fill="none">
+        <rect x="118" y="0" width="84" height="108" rx="10" fill="#18120A" stroke="#B8922A" stroke-width=".7"/>
+        <line x1="134" y1="24" x2="186" y2="24" stroke="#B8922A" stroke-width=".3" opacity=".4"/>
+        <line x1="134" y1="40" x2="186" y2="40" stroke="#B8922A" stroke-width=".3" opacity=".4"/>
+        <line x1="134" y1="56" x2="186" y2="56" stroke="#B8922A" stroke-width=".3" opacity=".4"/>
+        <circle cx="150" cy="68" r="3.5" fill="#080808" stroke="#B8922A" stroke-width=".5"/>
+        <circle cx="160" cy="68" r="3.5" fill="#080808" stroke="#B8922A" stroke-width=".5"/>
+        <circle cx="170" cy="68" r="3.5" fill="#080808" stroke="#B8922A" stroke-width=".5"/>
+        <rect x="62" y="104" width="196" height="218" rx="46" fill="url(#hg1)"/>
+        <rect x="74" y="116" width="172" height="194" rx="38" fill="url(#hg2)"/>
+        <circle cx="160" cy="213" r="84" fill="none" stroke="#B8922A" stroke-width="2.8"/>
+        <circle cx="160" cy="213" r="79" fill="none" stroke="rgba(184,146,42,.2)" stroke-width=".5"/>
+        <circle cx="160" cy="213" r="74" fill="url(#hd1)"/>
+        <rect x="159" y="142" width="2" height="12" rx="1" fill="#B8922A"/>
+        <rect x="159" y="272" width="2" height="12" rx="1" fill="#B8922A"/>
+        <rect x="88" y="212" width="12" height="2" rx="1" fill="#B8922A"/>
+        <rect x="220" y="212" width="12" height="2" rx="1" fill="#B8922A"/>
+        <circle cx="205" cy="161" r="1.8" fill="#B8922A" opacity=".55"/>
+        <circle cx="112" cy="161" r="1.8" fill="#B8922A" opacity=".55"/>
+        <circle cx="208" cy="263" r="1.8" fill="#B8922A" opacity=".55"/>
+        <circle cx="113" cy="263" r="1.8" fill="#B8922A" opacity=".55"/>
+        <text x="160" y="200" text-anchor="middle" fill="#B8922A" font-size="9.5" font-family="Montserrat,sans-serif" letter-spacing="4" font-weight="700">CHRONO</text>
+        <text x="160" y="211" text-anchor="middle" fill="rgba(184,146,42,.4)" font-size="5.5" font-family="Montserrat,sans-serif" letter-spacing="5">ELITE</text>
+        <circle cx="160" cy="234" r="14" fill="none" stroke="rgba(184,146,42,.25)" stroke-width=".6"/>
+        <text x="160" y="238" text-anchor="middle" fill="rgba(184,146,42,.5)" font-size="4.5" font-family="Montserrat,sans-serif">SWISS MADE</text>
+        <line x1="160" y1="213" x2="147" y2="175" stroke="#F0EAD6" stroke-width="4.5" stroke-linecap="round"/>
+        <line x1="160" y1="213" x2="190" y2="163" stroke="#F0EAD6" stroke-width="3" stroke-linecap="round"/>
+        <line x1="160" y1="213" x2="138" y2="240" stroke="#B8922A" stroke-width="1.2" stroke-linecap="round"/>
+        <circle cx="160" cy="213" r="5.5" fill="#B8922A"/>
+        <circle cx="160" cy="213" r="2.5" fill="#080808"/>
+        <rect x="253" y="204" width="24" height="18" rx="7" fill="url(#hc1)" stroke="#B8922A" stroke-width=".4"/>
+        <rect x="118" y="322" width="84" height="108" rx="10" fill="#18120A" stroke="#B8922A" stroke-width=".7"/>
+        <line x1="134" y1="394" x2="186" y2="394" stroke="#B8922A" stroke-width=".3" opacity=".4"/>
+        <line x1="134" y1="410" x2="186" y2="410" stroke="#B8922A" stroke-width=".3" opacity=".4"/>
+        <rect x="138" y="418" width="44" height="10" rx="3" fill="#221808" stroke="#B8922A" stroke-width=".8"/>
+        <defs>
+          <linearGradient id="hg1" x1="62" y1="104" x2="258" y2="322" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#D4AF5A"/><stop offset="45%" stop-color="#8B6914"/><stop offset="100%" stop-color="#1A1208"/>
+          </linearGradient>
+          <radialGradient id="hg2" cx="38%" cy="30%">
+            <stop offset="0%" stop-color="#2A2010"/><stop offset="100%" stop-color="#0D0D0D"/>
+          </radialGradient>
+          <radialGradient id="hd1" cx="33%" cy="28%">
+            <stop offset="0%" stop-color="#0F0C07"/><stop offset="100%" stop-color="#020100"/>
+          </radialGradient>
+          <linearGradient id="hc1" x1="253" y1="204" x2="277" y2="222" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#D4AF5A"/><stop offset="100%" stop-color="#8B6914"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TICKER ═══ -->
+<div class="ticker-bar">
+  <div class="ticker-track">
+    <span class="t-item">Free Worldwide Shipping <span class="t-dot">◆</span></span>
+    <span class="t-item">Cash On Delivery Available <span class="t-dot">◆</span></span>
+    <span class="t-item">100% Swiss Certified <span class="t-dot">◆</span></span>
+    <span class="t-item">2-Year Warranty <span class="t-dot">◆</span></span>
+    <span class="t-item">30-Day Returns <span class="t-dot">◆</span></span>
+    <span class="t-item">4.9 ★ from 2,400+ Reviews <span class="t-dot">◆</span></span>
+    <span class="t-item">Secure Encrypted Payments <span class="t-dot">◆</span></span>
+    <span class="t-item">Free Worldwide Shipping <span class="t-dot">◆</span></span>
+    <span class="t-item">Cash On Delivery Available <span class="t-dot">◆</span></span>
+    <span class="t-item">100% Swiss Certified <span class="t-dot">◆</span></span>
+    <span class="t-item">2-Year Warranty <span class="t-dot">◆</span></span>
+    <span class="t-item">30-Day Returns <span class="t-dot">◆</span></span>
+    <span class="t-item">4.9 ★ from 2,400+ Reviews <span class="t-dot">◆</span></span>
+    <span class="t-item">Secure Encrypted Payments <span class="t-dot">◆</span></span>
+  </div>
+</div>
+
+<!-- ═══ TRUST BAR ═══ -->
+<div class="trust-bar">
+  <div class="trust-bar-inner">
+    <div class="trust-item-bar"><div class="ti-icon">🚚</div><div><div class="ti-label">Free Shipping</div><div class="ti-sub">Worldwide, Insured</div></div></div>
+    <div class="trust-item-bar"><div class="ti-icon">💵</div><div><div class="ti-label">Cash on Delivery</div><div class="ti-sub">Pay when it arrives</div></div></div>
+    <div class="trust-item-bar"><div class="ti-icon">🔒</div><div><div class="ti-label">Secure Payments</div><div class="ti-sub">SSL Encrypted</div></div></div>
+    <div class="trust-item-bar"><div class="ti-icon">🏆</div><div><div class="ti-label">Swiss Certified</div><div class="ti-sub">100% Authentic</div></div></div>
+    <div class="trust-item-bar"><div class="ti-icon">↩️</div><div><div class="ti-label">30-Day Returns</div><div class="ti-sub">Hassle-free</div></div></div>
+    <div class="trust-item-bar"><div class="ti-icon">💬</div><div><div class="ti-label">WhatsApp Support</div><div class="ti-sub">Reply in minutes</div></div></div>
+  </div>
+</div>
+
+<!-- ═══ PROOF STRIP ═══ -->
+<div class="proof-strip">
+  <div class="proof-strip-inner">
+    <div class="proof-num"><strong>12,400+</strong><span>Happy Customers</span></div>
+    <div class="proof-sep"></div>
+    <div class="proof-num"><strong>4.9 ★</strong><span>Average Rating</span></div>
+    <div class="proof-sep"></div>
+    <div class="proof-num"><strong>80+</strong><span>Countries Shipped</span></div>
+    <div class="proof-sep"></div>
+    <div class="proof-num"><strong>2 Yr</strong><span>Service Warranty</span></div>
+    <div class="proof-sep"></div>
+    <div class="proof-num"><strong>24/7</strong><span>WhatsApp Support</span></div>
+  </div>
+</div>
+
+<!-- ═══ PRODUCT ═══ -->
+<section id="product">
+  <div class="prod-wrap">
+    <!-- Gallery -->
+    <div class="media-gallery reveal">
+      <div class="main-img">
+        <div class="main-img-badge">20% OFF</div>
+        <svg id="main-watch-svg" viewBox="0 0 300 300" width="260" fill="none">
+          <circle cx="150" cy="150" r="140" fill="url(#pw-bg)"/>
+          <rect x="110" y="14" width="80" height="106" rx="10" fill="#18120A" stroke="#B8922A" stroke-width=".7"/>
+          <rect x="56" y="118" width="188" height="196" rx="48" fill="url(#pw-case)"/>
+          <circle cx="150" cy="216" r="80" fill="none" stroke="#B8922A" stroke-width="2.5"/>
+          <circle cx="150" cy="216" r="74" fill="url(#pw-dial)"/>
+          <text x="150" y="204" text-anchor="middle" fill="#B8922A" font-size="9" font-family="Montserrat,sans-serif" letter-spacing="4" font-weight="700">CHRONO</text>
+          <text x="150" y="215" text-anchor="middle" fill="rgba(184,146,42,.38)" font-size="5" font-family="Montserrat,sans-serif" letter-spacing="5">ELITE</text>
+          <rect x="149" y="146" width="2" height="10" rx="1" fill="#B8922A"/>
+          <rect x="149" y="276" width="2" height="10" rx="1" fill="#B8922A"/>
+          <rect x="82" y="215" width="10" height="2" rx="1" fill="#B8922A"/>
+          <rect x="208" y="215" width="10" height="2" rx="1" fill="#B8922A"/>
+          <line x1="150" y1="216" x2="138" y2="180" stroke="#F0EAD6" stroke-width="4" stroke-linecap="round"/>
+          <line x1="150" y1="216" x2="177" y2="172" stroke="#F0EAD6" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="150" y1="216" x2="130" y2="242" stroke="#B8922A" stroke-width="1.1" stroke-linecap="round"/>
+          <circle cx="150" cy="216" r="5" fill="#B8922A"/><circle cx="150" cy="216" r="2.2" fill="#080808"/>
+          <rect x="240" y="207" width="20" height="18" rx="6" fill="url(#pw-crown)"/>
+          <rect x="110" y="314" width="80" height="106" rx="10" fill="#18120A" stroke="#B8922A" stroke-width=".7"/>
+          <defs>
+            <radialGradient id="pw-bg" cx="50%" cy="50%"><stop offset="0%" stop-color="#1a1500"/><stop offset="100%" stop-color="#050503"/></radialGradient>
+            <linearGradient id="pw-case" x1="56" y1="118" x2="244" y2="314" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#D4AF5A"/><stop offset="45%" stop-color="#8B6914"/><stop offset="100%" stop-color="#1A1208"/></linearGradient>
+            <radialGradient id="pw-dial" cx="35%" cy="28%"><stop offset="0%" stop-color="#100E08"/><stop offset="100%" stop-color="#020100"/></radialGradient>
+            <linearGradient id="pw-crown" x1="240" y1="207" x2="260" y2="225" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#D4AF5A"/><stop offset="100%" stop-color="#7A5910"/></linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <div class="thumb-row">
+        <div class="thumb active" onclick="switchView('front',this)">
+          <svg viewBox="0 0 60 60" fill="none"><circle cx="30" cy="30" r="22" fill="none" stroke="#B8922A" stroke-width="1.2"/><circle cx="30" cy="30" r="18" fill="#080808"/><line x1="30" y1="30" x2="30" y2="12" stroke="#F0EAD6" stroke-width="2" stroke-linecap="round"/><line x1="30" y1="30" x2="43" y2="22" stroke="#F0EAD6" stroke-width="1.5" stroke-linecap="round"/><circle cx="30" cy="30" r="2" fill="#B8922A"/></svg>
+        </div>
+        <div class="thumb" onclick="switchView('side',this)">
+          <svg viewBox="0 0 60 60" fill="none"><rect x="22" y="8" width="16" height="44" rx="6" fill="url(#tv-g)"/><rect x="24" y="12" width="12" height="36" rx="4" fill="none" stroke="#B8922A" stroke-width=".7"/><line x1="30" y1="16" x2="30" y2="20" stroke="#B8922A" stroke-width=".5"/><defs><linearGradient id="tv-g" x1="22" y1="8" x2="38" y2="52" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#D4AF5A"/><stop offset="100%" stop-color="#3A2A08"/></linearGradient></defs></svg>
+        </div>
+        <div class="thumb" onclick="switchView('back',this)">
+          <svg viewBox="0 0 60 60" fill="none"><circle cx="30" cy="30" r="22" fill="none" stroke="#B8922A" stroke-width="1.2"/><circle cx="30" cy="30" r="18" fill="#0a0a0a"/><circle cx="30" cy="30" r="10" fill="none" stroke="rgba(184,146,42,.3)" stroke-width=".5"/><text x="30" y="33" text-anchor="middle" fill="#B8922A" font-size="5" font-family="Montserrat,sans-serif">SWISS</text></svg>
+        </div>
+        <div class="thumb" onclick="switchView('strap',this)">
+          <svg viewBox="0 0 60 60" fill="none"><rect x="24" y="6" width="12" height="48" rx="5" fill="#1A1208" stroke="#B8922A" stroke-width=".6"/><rect x="27" y="24" width="6" height="2" rx="1" fill="#B8922A" opacity=".5"/><rect x="27" y="30" width="6" height="2" rx="1" fill="#B8922A" opacity=".5"/></svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Info -->
+    <div class="reveal d2">
+      <div class="prod-brand-tag">Chrono Elite — Swiss Collection</div>
+      <h2 class="prod-name">Imperiale Noir<br>Automatic Chronograph</h2>
+      <div class="prod-stars-row">
+        <div class="stars-gold">★★★★★</div>
+        <a href="#reviews" class="review-count">2,400+ Verified Reviews</a>
+        <span class="rc-verified" style="font-size:.58rem">✓ CERTIFIED</span>
+      </div>
+
+      <!-- Price -->
+      <div class="price-row">
+        <div class="price-now">$399</div>
+        <div class="price-old">$499</div>
+        <div class="price-save">SAVE $100</div>
+      </div>
+
+      <!-- Stock + countdown -->
+      <div class="stock-row">
+        <div class="stock-dot"></div>
+        <span class="stock-label">In Stock</span>
+        <span class="stock-count">— Only 7 units left at this price!</span>
+      </div>
+      <div class="countdown-wrap">
+        <div class="cd-label">⏰ Offer Expires In:</div>
+        <div class="cd-timer">
+          <div class="cd-unit"><span class="cd-num" id="cd-h">04</span><span class="cd-lab">HRS</span></div>
+          <span class="cd-sep">:</span>
+          <div class="cd-unit"><span class="cd-num" id="cd-m">22</span><span class="cd-lab">MIN</span></div>
+          <span class="cd-sep">:</span>
+          <div class="cd-unit"><span class="cd-num" id="cd-s">47</span><span class="cd-lab">SEC</span></div>
+        </div>
+      </div>
+
+      <!-- Variants -->
+      <div class="variant-label">Dial Color</div>
+      <div class="variant-options">
+        <button class="v-opt sel" onclick="selectVariant(this,'Black')">Black</button>
+        <button class="v-opt" onclick="selectVariant(this,'Navy Blue')">Navy Blue</button>
+        <button class="v-opt" onclick="selectVariant(this,'Champagne')">Champagne</button>
+      </div>
+      <div class="variant-label">Strap Material</div>
+      <div class="variant-options">
+        <button class="v-opt sel" onclick="selectVariant(this,'Leather')">Leather</button>
+        <button class="v-opt" onclick="selectVariant(this,'Steel Bracelet')">Steel Bracelet</button>
+        <button class="v-opt" onclick="selectVariant(this,'Rubber')">Rubber</button>
+      </div>
+
+      <!-- Quantity -->
+      <div class="qty-row">
+        <div class="variant-label" style="margin:0">Quantity:</div>
+        <div class="qty-ctrl">
+          <button class="qty-btn" onclick="changeQty(-1)">−</button>
+          <input class="qty-val" id="qty" type="text" value="1" readonly/>
+          <button class="qty-btn" onclick="changeQty(1)">+</button>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="action-stack">
+        <button class="btn-add-cart" onclick="addCart()">♡ Add to Wishlist / Cart</button>
+        <button class="btn-buy-now" onclick="scrollToCOD()">🛒 Buy Now — Order Today</button>
+        <a href="https://wa.me/923001234567?text=Hi!%20I%20want%20to%20order%20the%20Imperiale%20Noir%20Watch" target="_blank" class="btn-whatsapp">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.843L.054 23.25a.75.75 0 00.916.957l5.579-1.457A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.72 9.72 0 01-4.989-1.376l-.358-.213-3.71.97.988-3.607-.233-.372A9.712 9.712 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+          Order via WhatsApp
+        </a>
+      </div>
+
+      <!-- Payment Badges -->
+      <div class="payment-badges">
+        <div class="cod-badge">💵 COD Available</div>
+        <div class="pay-badge">🔒 SSL Secure</div>
+        <div class="pay-badge">VISA</div>
+        <div class="pay-badge">Mastercard</div>
+        <div class="pay-badge">PayPal</div>
+        <div class="pay-badge">Apple Pay</div>
+      </div>
+
+      <!-- Highlights -->
+      <div class="prod-highlights">
+        <div class="highlight-item"><div class="hi-icon">⚙️</div><div class="hi-text"><strong>Swiss Automatic Movement</strong><span>21-jewel self-winding mechanism, 72-hour power reserve</span></div></div>
+        <div class="highlight-item"><div class="hi-icon">💎</div><div class="hi-text"><strong>Sapphire Crystal Glass</strong><span>Scratch-resistant, anti-reflective coating</span></div></div>
+        <div class="highlight-item"><div class="hi-icon">🌊</div><div class="hi-text"><strong>100m Water Resistant</strong><span>Safe for swimming and snorkelling</span></div></div>
+        <div class="highlight-item"><div class="hi-icon">📦</div><div class="hi-text"><strong>Luxury Gift Box Included</strong><span>Certificate of authenticity + 2-year warranty card</span></div></div>
+        <div class="highlight-item"><div class="hi-icon">🚚</div><div class="hi-text"><strong>Free Insured Delivery</strong><span>Arrives in 5–8 business days, fully tracked</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ STORY ═══ -->
+<section id="story" class="section-pad">
+  <div class="container">
+    <div class="story-wrap">
+      <div class="reveal">
+        <div class="tag" style="margin-bottom:.8rem">The Why Behind It</div>
+        <h2 class="serif" style="font-size:2.2rem;line-height:1.2;margin-bottom:1rem">More Than a Watch.<br><em class="italic gold">A Statement.</em></h2>
+        <p style="font-size:.85rem;color:var(--muted);line-height:1.8;margin-bottom:1.2rem">Every great achievement deserves to be marked. The Imperiale Noir was designed for the person who refuses to settle — in life, in work, and in the details others don't notice. Your wrist is prime real estate. Use it wisely.</p>
+        <p style="font-size:.85rem;color:var(--muted);line-height:1.8;margin-bottom:1.5rem">Whether it's a gift for someone you admire, a reward for your own hard work, or a statement to the world — this watch carries meaning beyond its mechanics.</p>
+        <div class="problem-grid">
+          <div class="prob-item"><div class="prob-icon">🎁</div><div class="prob-title">Perfect Gift</div><div class="prob-text">Luxury gift box with ribbon. Ready to present.</div></div>
+          <div class="prob-item"><div class="prob-icon">💼</div><div class="prob-title">Business Meetings</div><div class="prob-text">Make the first impression count every time.</div></div>
+          <div class="prob-item"><div class="prob-icon">🥂</div><div class="prob-title">Special Occasions</div><div class="prob-text">Weddings, galas, anniversaries — always right.</div></div>
+          <div class="prob-item"><div class="prob-icon">🏆</div><div class="prob-title">Achievement</div><div class="prob-text">Mark your milestone with something lasting.</div></div>
+        </div>
+      </div>
+      <div class="reveal d2">
+        <div class="story-card">
+          <div class="story-deco"></div>
+          <p class="story-quote">"I bought the Imperiale Noir as a gift for my husband's promotion. He hasn't taken it off in three months. The quality is extraordinary — it looks double the price. We'll be back for more."</p>
+          <div class="story-sig">— Fatima K. · Dubai, UAE · ★★★★★</div>
+        </div>
+        <div style="margin-top:1.5rem;background:var(--dark);border:1px solid var(--border);padding:1.5rem">
+          <div class="tag" style="margin-bottom:.7rem">Quick Specs</div>
+          <table style="width:100%;font-size:.78rem;border-collapse:collapse">
+            <tr><td style="color:var(--dim);padding:.4rem 0;border-bottom:1px solid rgba(184,146,42,.07)">Movement</td><td style="text-align:right;color:var(--text);padding:.4rem 0;border-bottom:1px solid rgba(184,146,42,.07)">Swiss Automatic 21J</td></tr>
+            <tr><td style="color:var(--dim);padding:.4rem 0;border-bottom:1px solid rgba(184,146,42,.07)">Case Material</td><td style="text-align:right;color:var(--text);padding:.4rem 0;border-bottom:1px solid rgba(184,146,42,.07)">316L Stainless Steel</td></tr>
+            <tr><td style="color:var(--dim);padding:.4rem 0;border-bottom:1px solid rgba(184,146,42,.07)">Crystal</td><td style="text-align:right;color:var(--text);padding:.4rem 0;border-bottom:1px solid rgba(184,146,42,.07)">Sapphire AR-Coated</td></tr>
+            <tr><td style="color:var(--dim);padding:.4rem 0;border-bottom:1px solid rgba(184,146,42,.07)">Water Resist.</td><td style="text-align:right;color:var(--text);padding:.4rem 0;border-bottom:1px solid rgba(184,146,42,.07)">100 Metres</td></tr>
+            <tr><td style="color:var(--dim);padding:.4rem 0;border-bottom:1px solid rgba(184,146,42,.07)">Case Diameter</td><td style="text-align:right;color:var(--text);padding:.4rem 0;border-bottom:1px solid rgba(184,146,42,.07)">42mm</td></tr>
+            <tr><td style="color:var(--dim);padding:.4rem 0">Power Reserve</td><td style="text-align:right;color:var(--gold2);padding:.4rem 0">72 Hours</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BUNDLES ═══ -->
+<section id="bundles" class="section-pad">
+  <div class="container">
+    <div class="tag reveal">Save More</div>
+    <h2 class="serif reveal d1" style="font-size:2.2rem;margin:.5rem 0 .3rem">Bundle <em class="italic gold">Deals</em></h2>
+    <p style="font-size:.82rem;color:var(--muted)" class="reveal d2">Buy more, save more — best value for gifts and collectors</p>
+    <div class="bundle-grid">
+      <div class="bundle-card reveal">
+        <div class="bundle-name">Starter</div>
+        <div class="bundle-desc">One perfect watch for yourself or someone special</div>
+        <ul class="bundle-items">
+          <li>1× Imperiale Noir Watch</li>
+          <li>Luxury Gift Box</li>
+          <li>Certificate of Authenticity</li>
+          <li>2-Year Warranty Card</li>
+        </ul>
+        <div class="bundle-price"><span class="b-now">$399</span><span class="b-old">$499</span><span class="b-save">Save 20%</span></div>
+        <button class="bundle-btn" onclick="scrollToCOD()">Order Now</button>
+      </div>
+      <div class="bundle-card best reveal d1">
+        <div class="bundle-best-tag">🔥 MOST POPULAR</div>
+        <div class="bundle-name">Duo Gift Set</div>
+        <div class="bundle-desc">Perfect for couples or two special occasions</div>
+        <ul class="bundle-items">
+          <li>2× Imperiale Noir Watches</li>
+          <li>2× Luxury Gift Boxes</li>
+          <li>Free Gift Wrapping</li>
+          <li>Priority Express Delivery</li>
+          <li>Matching Strap Extras ×2</li>
+        </ul>
+        <div class="bundle-price"><span class="b-now">$699</span><span class="b-old">$998</span><span class="b-save">Save 30%</span></div>
+        <button class="bundle-btn" onclick="scrollToCOD()">Order Now — Best Value</button>
+      </div>
+      <div class="bundle-card reveal d2">
+        <div class="bundle-name">Collector's Set</div>
+        <div class="bundle-desc">3 iconic dials — the complete Imperiale experience</div>
+        <ul class="bundle-items">
+          <li>3× Watches (Black, Navy, Champagne)</li>
+          <li>3× Premium Gift Boxes</li>
+          <li>Watch Roll Case (Leather)</li>
+          <li>VIP White-Glove Delivery</li>
+          <li>Lifetime Support Access</li>
+        </ul>
+        <div class="bundle-price"><span class="b-now">$999</span><span class="b-old">$1,497</span><span class="b-save">Save 33%</span></div>
+        <button class="bundle-btn" onclick="scrollToCOD()">Order Now</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ REVIEWS ═══ -->
+<section id="reviews" class="section-pad">
+  <div class="container">
+    <div class="tag reveal">Real Customers</div>
+    <h2 class="serif reveal d1" style="font-size:2.2rem;margin:.5rem 0 2rem">What Buyers <em class="italic gold">Say</em></h2>
+    <div class="reviews-summary reveal">
+      <div class="rating-big">
+        <div class="rating-num">4.9</div>
+        <div class="rating-stars">★★★★★</div>
+        <div class="rating-count">2,400+ reviews</div>
+      </div>
+      <div class="rating-bars">
+        <div class="rb-row"><span class="rb-label">5 ★</span><div class="rb-bar"><div class="rb-fill" style="width:88%"></div></div><span class="rb-count">88%</span></div>
+        <div class="rb-row"><span class="rb-label">4 ★</span><div class="rb-bar"><div class="rb-fill" style="width:9%"></div></div><span class="rb-count">9%</span></div>
+        <div class="rb-row"><span class="rb-label">3 ★</span><div class="rb-bar"><div class="rb-fill" style="width:2%"></div></div><span class="rb-count">2%</span></div>
+        <div class="rb-row"><span class="rb-label">2 ★</span><div class="rb-bar"><div class="rb-fill" style="width:1%"></div></div><span class="rb-count">1%</span></div>
+        <div class="rb-row"><span class="rb-label">1 ★</span><div class="rb-bar"><div class="rb-fill" style="width:0%"></div></div><span class="rb-count">0%</span></div>
+      </div>
+    </div>
+    <div class="reviews-grid reveal d2">
+      <div class="review-card">
+        <div class="rc-top"><div class="rc-stars">★★★★★</div><div class="rc-verified">✓ Verified</div></div>
+        <div class="rc-title">Exceeded Every Expectation</div>
+        <div class="rc-text">"Bought this for my father's birthday. The packaging alone was worth 5 stars. The watch is absolutely stunning in person — far better than photos show. He wore it to a wedding and got so many compliments."</div>
+        <div class="rc-author">
+          <div class="rc-avatar">AR</div>
+          <div><div class="rc-name">Ahmed R.</div><div class="rc-loc">Karachi, PK · 2 weeks ago</div></div>
+          <div class="rc-img" style="margin-left:auto">📦</div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="rc-top"><div class="rc-stars">★★★★★</div><div class="rc-verified">✓ Verified</div></div>
+        <div class="rc-title">COD was Smooth & Fast</div>
+        <div class="rc-text">"Was hesitant to order luxury online, but the COD option made it risk-free. Watch arrived in 6 days, beautifully packaged. Paid on delivery, no issues at all. The automatic movement is silky smooth."</div>
+        <div class="rc-author">
+          <div class="rc-avatar">MU</div>
+          <div><div class="rc-name">Muhammad U.</div><div class="rc-loc">Lahore, PK · 1 month ago</div></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="rc-top"><div class="rc-stars">★★★★★</div><div class="rc-verified">✓ Verified</div></div>
+        <div class="rc-title">Gift of the Year</div>
+        <div class="rc-text">"Got this as an anniversary gift for my husband. He said it's the best gift he's ever received. The leather strap quality is exceptional and the dial catches light beautifully. Will definitely order again."</div>
+        <div class="rc-author">
+          <div class="rc-avatar">SK</div>
+          <div><div class="rc-name">Sara K.</div><div class="rc-loc">Dubai, UAE · 3 weeks ago</div></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="rc-top"><div class="rc-stars">★★★★★</div><div class="rc-verified">✓ Verified</div></div>
+        <div class="rc-title">WhatsApp Support was Amazing</div>
+        <div class="rc-text">"Had a question about sizing and the team replied on WhatsApp within 5 minutes. That's the kind of service you don't get everywhere. Watch is perfect, exactly as described. Highly recommended."</div>
+        <div class="rc-author">
+          <div class="rc-avatar">ZA</div>
+          <div><div class="rc-name">Zaid A.</div><div class="rc-loc">Islamabad, PK · 2 months ago</div></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="rc-top"><div class="rc-stars">★★★★★</div><div class="rc-verified">✓ Verified</div></div>
+        <div class="rc-title">Looks Like $2,000 — Costs $399</div>
+        <div class="rc-text">"Multiple colleagues asked where I got this thinking I spent thousands. The finishing is immaculate. Sapphire glass is crystal clear. The automatic movement winds perfectly. Worth every rupee."</div>
+        <div class="rc-author">
+          <div class="rc-avatar">HA</div>
+          <div><div class="rc-name">Hassan A.</div><div class="rc-loc">Multan, PK · 1 week ago</div></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="rc-top"><div class="rc-stars">★★★★★</div><div class="rc-verified">✓ Verified</div></div>
+        <div class="rc-title">Third Purchase — Never Disappointed</div>
+        <div class="rc-text">"This is my third watch from ChronoElite. Each one has been flawless. Quality is consistently excellent, shipping is fast, and the gift packaging gets better every time. My go-to for watches now."</div>
+        <div class="rc-author">
+          <div class="rc-avatar">FK</div>
+          <div><div class="rc-name">Faisal K.</div><div class="rc-loc">London, UK · 5 days ago</div></div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:2rem">
+      <button class="btn-secondary" style="border-color:var(--border)">Load More Reviews (2,394 more)</button>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ COD / CHECKOUT ═══ -->
+<section id="cod" class="section-pad">
+  <div class="container">
+    <div class="cod-wrap">
+      <div class="cod-info reveal">
+        <div class="tag" style="margin-bottom:.8rem">Simple Ordering</div>
+        <h2 class="serif" style="font-size:2rem;margin-bottom:.5rem">Order in <em class="italic gold">3 Easy Steps</em></h2>
+        <p>Fill out the form, choose Cash on Delivery or online payment, and we'll handle the rest.</p>
+        <ol class="cod-steps" style="list-style:none;margin-top:1.5rem">
+          <li class="cod-step"><div class="step-num">1</div><div class="step-text"><strong>Fill the Form</strong><span>Name, address, phone number — takes 60 seconds</span></div></li>
+          <li class="cod-step"><div class="step-num">2</div><div class="step-text"><strong>We Confirm</strong><span>You'll get a WhatsApp/SMS confirmation within 1 hour</span></div></li>
+          <li class="cod-step"><div class="step-num">3</div><div class="step-text"><strong>Delivered to You</strong><span>5–8 business days, fully tracked. Pay on delivery if you choose COD</span></div></li>
+        </ol>
+        <div style="background:var(--char);border:1px solid var(--gold);padding:1.2rem;margin-top:1rem">
+          <div style="font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold2);margin-bottom:.5rem;font-weight:700">💬 Need Help? Chat Now</div>
+          <a href="https://wa.me/923001234567" target="_blank" style="display:flex;align-items:center;gap:.6rem;color:var(--text);font-size:.82rem">
+            <span style="font-size:1.2rem">📱</span>
+            <div><div style="font-weight:600">+92 300 123 4567</div><div style="font-size:.7rem;color:var(--muted)">WhatsApp — Reply in minutes</div></div>
+          </a>
+        </div>
+      </div>
+
+      <div class="cod-form-wrap reveal d2">
+        <div class="form-title">Place Your Order</div>
+        <div class="form-sub">Fill in your details below — we'll confirm by WhatsApp</div>
+        <div class="field-row">
+          <div class="field"><label>First Name</label><input type="text" placeholder="Ali"/></div>
+          <div class="field"><label>Last Name</label><input type="text" placeholder="Khan"/></div>
+        </div>
+        <div class="field"><label>Phone / WhatsApp</label><input type="tel" placeholder="+92 300 000 0000"/></div>
+        <div class="field"><label>Email Address</label><input type="email" placeholder="your@email.com"/></div>
+        <div class="field"><label>Delivery Address</label><input type="text" placeholder="Street address, apartment, area"/></div>
+        <div class="field-row">
+          <div class="field"><label>City</label><input type="text" placeholder="Multan"/></div>
+          <div class="field"><label>Country</label>
+            <select>
+              <option>Pakistan</option><option>UAE</option><option>Saudi Arabia</option>
+              <option>UK</option><option>USA</option><option>Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="field"><label>Product & Bundle</label>
+          <select>
+            <option>Imperiale Noir — 1 Watch ($399)</option>
+            <option>Imperiale Noir — Duo Gift Set ($699)</option>
+            <option>Imperiale Noir — Collector's Set ($999)</option>
+          </select>
+        </div>
+        <div class="field"><label>Strap Choice</label>
+          <select><option>Black Leather</option><option>Steel Bracelet</option><option>Rubber</option></select>
+        </div>
+        <div class="payment-method">
+          <div class="pm-label">Payment Method</div>
+          <div class="pm-options">
+            <label class="pm-opt"><input type="radio" name="pm" value="cod" checked/><span>💵 Cash on Delivery</span></label>
+            <label class="pm-opt"><input type="radio" name="pm" value="card"/><span>💳 Card / Online</span></label>
+            <label class="pm-opt"><input type="radio" name="pm" value="paypal"/><span>PayPal</span></label>
+          </div>
+        </div>
+        <div class="order-total-box">
+          <div class="ot-row"><span>Subtotal</span><span>$399.00</span></div>
+          <div class="ot-row"><span>Shipping</span><span style="color:var(--green)">FREE</span></div>
+          <div class="ot-row"><span>Discount (20%)</span><span style="color:var(--red)">−$100.00</span></div>
+          <div class="ot-row"><span>Total</span><span>$399.00</span></div>
+        </div>
+        <button class="submit-btn" onclick="submitOrder()">✅ Confirm Order — Secure Checkout</button>
+        <p class="form-note">🔒 Your information is encrypted & never shared. By ordering you agree to our terms of service.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section id="faq" class="section-pad">
+  <div class="container">
+    <div class="tag reveal">Got Questions?</div>
+    <h2 class="serif reveal d1" style="font-size:2.2rem;margin:.5rem 0 0">Frequently Asked <em class="italic gold">Questions</em></h2>
+    <div class="faq-list reveal d2">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Is Cash on Delivery available? <span class="faq-icon">+</span></button>
+        <div class="faq-a">Yes! We offer Cash on Delivery (COD) for orders in Pakistan and select Middle East countries. Simply choose COD at checkout and pay when your package arrives at your door. No upfront payment needed.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">How long does delivery take? <span class="faq-icon">+</span></button>
+        <div class="faq-a">Delivery typically takes 5–8 business days for Pakistan and 7–12 days internationally. Every order comes with a tracking number sent to your WhatsApp or email within 24 hours of dispatch.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Are these watches genuine / authentic? <span class="faq-icon">+</span></button>
+        <div class="faq-a">Absolutely. Every Chrono Elite watch comes with a numbered Certificate of Authenticity, a 2-year warranty card, and has been inspected by our certified watchmakers before shipping. We stand behind every piece we sell.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">What is your return/refund policy? <span class="faq-icon">+</span></button>
+        <div class="faq-a">We offer a full 30-day return policy. If you are not 100% satisfied, contact us via WhatsApp within 30 days of delivery and we'll arrange a free return pickup and full refund — no questions asked.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Can I order as a gift with gift wrapping? <span class="faq-icon">+</span></button>
+        <div class="faq-a">Yes! All watches ship in a premium gift box. For Duo and Collector bundles, we include complimentary gift wrapping with a personalized message card. Just mention your message in the order notes.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">How do I contact support? <span class="faq-icon">+</span></button>
+        <div class="faq-a">The fastest way is WhatsApp: +92 300 123 4567. We typically reply within minutes during business hours (9am–9pm PKT). You can also email us at support@chronoelite.com and we'll respond within 24 hours.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="foot-inner">
+    <div class="foot-grid">
+      <div>
+        <a href="#" class="foot-logo">CHRONO ELITE®</a>
+        <p class="foot-desc">Premium Swiss-certified timepieces, shipped worldwide with Cash on Delivery. Built for those who refuse to settle.</p>
+        <div class="foot-contact">
+          <a href="https://wa.me/923001234567" target="_blank">📱 +92 300 123 4567 (WhatsApp)</a>
+          <a href="mailto:support@chronoelite.com">✉️ support@chronoelite.com</a>
+        </div>
+        <div class="social-row" style="margin-top:1rem">
+          <a href="#" class="soc">in</a><a href="#" class="soc">ig</a><a href="#" class="soc">fb</a><a href="#" class="soc">yt</a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="#product">Imperiale Noir</a></li>
+          <li><a href="#bundles">Bundle Deals</a></li>
+          <li><a href="#">New Arrivals</a></li>
+          <li><a href="#">Gift Sets</a></li>
+          <li><a href="#">Accessories</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#cod">Track Order</a></li>
+          <li><a href="#faq">Returns & Refunds</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="https://wa.me/923001234567">WhatsApp Support</a></li>
+          <li><a href="#">Warranty</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">Our Story</a></li>
+          <li><a href="#">Authenticity</a></li>
+          <li><a href="#">Affiliates</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p class="foot-copy">© 2025 Chrono Elite. All rights reserved. All watches are Swiss-certified authentic.</p>
+      <div class="foot-pays">
+        <div class="fp">VISA</div><div class="fp">MC</div><div class="fp">AMEX</div><div class="fp">PAYPAL</div><div class="fp">COD</div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══ FLOATING WHATSAPP ═══ -->
+<div id="wa-float">
+  <div class="wa-tooltip" id="wa-tip">💬 Chat with us!</div>
+  <a href="https://wa.me/923001234567?text=Hi!%20I%20want%20to%20order%20a%20watch" target="_blank" class="wa-btn" title="WhatsApp Support">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.843L.054 23.25a.75.75 0 00.916.957l5.579-1.457A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.72 9.72 0 01-4.989-1.376l-.358-.213-3.71.97.988-3.607-.233-.372A9.712 9.712 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+  </a>
+</div>
+
+<!-- ═══ STICKY BUY BTN ═══ -->
+<div id="sticky-buy">
+  <div class="sticky-price">$399 <span style="font-size:.8rem;color:var(--dim);text-decoration:line-through">$499</span></div>
+  <button class="sticky-btn" onclick="scrollToCOD()">🛒 Buy Now — COD</button>
+</div>
+
+<!-- ═══ TOAST ═══ -->
+<div id="toast">
+  <div class="toast-t" id="t-title">Added!</div>
+  <div class="toast-b" id="t-body">Item added to cart</div>
+</div>
+
+<script>
+/* ── REVEAL ON SCROLL ── */
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+/* ── NAV MOBILE ── */
+function toggleNav(){document.getElementById('nav-links').classList.toggle('open')}
+
+/* ── SCROLL HELPERS ── */
+function scrollToCOD(){document.getElementById('cod').scrollIntoView({behavior:'smooth'})}
+
+/* ── CART ── */
+let cart=0;
+function addCart(){cart++;document.getElementById('cart-count').textContent=cart;showToast('Added to Cart ✓','Imperiale Noir — $399');}
+function showToast(t,b){const el=document.getElementById('toast');document.getElementById('t-title').textContent=t;document.getElementById('t-body').textContent=b;el.classList.add('show');setTimeout(()=>el.classList.remove('show'),3200);}
+
+/* ── QTY ── */
+function changeQty(d){const el=document.getElementById('qty');let v=parseInt(el.value)+d;if(v<1)v=1;if(v>10)v=10;el.value=v;}
+
+/* ── VARIANTS ── */
+function selectVariant(btn,val){const siblings=btn.parentElement.querySelectorAll('.v-opt');siblings.forEach(b=>b.classList.remove('sel'));btn.classList.add('sel');}
+
+/* ── COUNTDOWN ── */
+let endTime=Date.now()+4*3600000+22*60000+47000;
+function updateCD(){
+  const diff=endTime-Date.now();
+  if(diff<=0){endTime=Date.now()+6*3600000;}
+  const h=Math.floor(diff/3600000),m=Math.floor((diff%3600000)/60000),s=Math.floor((diff%60000)/1000);
+  document.getElementById('cd-h').textContent=String(h).padStart(2,'0');
+  document.getElementById('cd-m').textContent=String(m).padStart(2,'0');
+  document.getElementById('cd-s').textContent=String(s).padStart(2,'0');
+}
+setInterval(updateCD,1000);updateCD();
+
+/* ── FAQ ── */
+function toggleFaq(btn){const item=btn.parentElement;const wasOpen=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));if(!wasOpen)item.classList.add('open');}
+
+/* ── POPUP (exit intent + 8s) ── */
+let popupShown=false;
+function showPopup(){if(!popupShown){popupShown=true;document.getElementById('popup-overlay').classList.add('show');}}
+function closePopup(){document.getElementById('popup-overlay').classList.remove('show');}
+function claimDiscount(){const v=document.getElementById('popup-email').value.trim();if(v&&v.includes('@')){closePopup();showToast('🎉 Code Sent!','Check your email for 15% OFF discount code');}else{alert('Please enter a valid email.');}}
+setTimeout(showPopup,12000);
+document.addEventListener('mouseleave',e=>{if(e.clientY<10)showPopup();});
+
+/* ── WHATSAPP TIP AUTO-HIDE ── */
+setTimeout(()=>{const t=document.getElementById('wa-tip');if(t)t.style.display='none';},5000);
+
+/* ── PRODUCT VIEW SWITCH ── */
+function switchView(v,thumb){
+  document.querySelectorAll('.thumb').forEach(t=>t.classList.remove('active'));
+  thumb.classList.add('active');
+  // In production: swap main image src here
+  showToast('View Changed','Showing '+v+' view');
+}
+
+/* ── ORDER SUBMIT ── */
+function submitOrder(){showToast('Order Received! ✅','We\'ll WhatsApp you to confirm in 1 hour');setTimeout(()=>showToast('Thank You!','Your Imperiale Noir is being prepared for shipment'),3500);}
+
+/* ── STICKY BUY SHOW ON MOBILE SCROLL ── */
+window.addEventListener('scroll',()=>{
+  const sb=document.getElementById('sticky-buy');
+  if(window.innerWidth<=768&&window.scrollY>300){sb.style.display='flex';}else{sb.style.display='none';}
+});
+</script>
+</body>
+</html>
